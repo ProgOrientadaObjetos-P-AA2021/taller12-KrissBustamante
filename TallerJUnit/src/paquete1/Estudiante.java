@@ -42,4 +42,11 @@ public void establecerNombresEstudiante(String n){
         return identificacionEstudiante;
     
     }
+     @Override
+             public String toString() {
+   String cadena = String.format("Nombre Estudiante: %s %s\nCédula: %s",
+                nombresEstudiante, apellidosEstudiante, identificacionEstudiante);
+        return cadena;
+    
+}
 }

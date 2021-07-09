@@ -68,14 +68,12 @@ public class EstudianteDistancia extends Estudiante{
     
     @Override
     public String toString(){
-        String cadena = String.format("Nombre Estudiante:%s %s\n"
-                 + "Cédula: %s"
-                + "Notas: \n"
-                + "Promedio: %.1f"
-                + "Mejor Nota: %.1f"
-                + "Peor Nota: %f", obtenerNombresEstudiante(),
-                obtenerApellidosEstudiante(),obtenerIdentificacionEstudiante(),
-                obtenerMejorNota(),obtenerPeorNota());
+     String cadena = String.format("%sNotas: \n", super.toString());
+        for (int i = 0; i < notas.size(); i++) {
+            cadena = String.format("%s%.1f", cadena, notas.get(i).obtenerValor());
+        }
+        cadena = String.format("%sProemdio: %.1fMejor Nota: %.1fPeor Nota: %.1f",
+                cadena, promedio, mejorNota, peorNota);
         return cadena;
     }
     
